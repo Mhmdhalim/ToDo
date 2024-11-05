@@ -1,5 +1,4 @@
 // Task.js
-import React, { useState } from 'react';
 import cross from '../images/icon-cross.svg';
 import check from '../images/icon-check.svg';
 
