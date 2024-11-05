@@ -1,81 +1,82 @@
-# To-Do List Project
+# To-Do App
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Future Improvements](#future-improvements)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## Overview
-The **To-Do List** project is a simple and intuitive task management application designed to help users organize and track their daily activities. With features such as adding, editing, and deleting tasks, this app enables users to efficiently manage their to-dos, stay organized, and boost productivity.
+A minimalistic and interactive To-Do List app built with React. This app allows users to add, mark, filter, and remove tasks efficiently. The app saves tasks in local storage, so the task list persists across sessions.
 
 ## Features
-- **Add New Tasks**: Users can add new tasks to the list.
-- **Edit Tasks**: Modify the details of existing tasks.
-- **Delete Tasks**: Remove tasks when they are no longer needed.
-- **Mark Tasks as Completed**: Toggle tasks to mark them as completed or pending.
-- **Responsive Design**: Works across various screen sizes for both desktop and mobile devices.
 
-## Technologies
-- **Frontend**: HTML, CSS, JavaScript (or React, if applicable)
-- **Backend**: None (for frontend-only apps) / Node.js & Express (for full-stack version)
-- **Database**: Local storage (for frontend-only apps) / MongoDB (for full-stack version)
+- **Add Tasks**: Users can create new tasks by typing a task name and submitting it.
+- **Mark as Completed**: Toggle a task as completed by clicking on the check icon.
+- **Filter Tasks**: View all tasks, only active tasks, or only completed tasks.
+- **Remove Tasks**: Delete individual tasks by clicking the remove (cross) icon.
+- **Clear Completed**: Remove all completed tasks with a single click.
+- **Persistent Data**: Task data is saved in `localStorage`, so tasks remain after refreshing the page.
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **UUID**: Generates unique IDs for each task.
+- **CSS with Tailwind**: Styled with Tailwind CSS for a modern and responsive design.
 
 ## Getting Started
-Follow these steps to set up and run the project locally.
+
+Follow these instructions to get a local copy of the project up and running.
 
 ### Prerequisites
-- **Node.js** and **npm** installed (if applicable)
+
+- [Node.js](https://nodejs.org/) installed on your machine.
 
 ### Installation
+
 1. Clone the repository:
+
     ```bash
-    git clone https://github.com/your-username/todo-list.git
-    cd todo-list
+    git clone https://github.com/yourusername/todo-app.git
     ```
-2. Install dependencies (if applicable):
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd todo-app
+    ```
+
+3. Install dependencies:
+
     ```bash
     npm install
     ```
 
-### Running the App
-- **For Frontend Only**: Open `index.html` in a web browser.
-- **For Full Stack**: Start the server and open the application in your browser.
+4. Start the development server:
+
     ```bash
     npm start
     ```
 
-## Usage
-1. **Add Tasks**: Use the input field to add a new task and press "Add" or hit Enter.
-2. **Edit Tasks**: Click on a task to edit its details.
-3. **Delete Tasks**: Click the delete button next to a task to remove it.
-4. **Mark Completed**: Toggle the completion status by clicking on the checkbox.
+5. Open your browser and go to `http://localhost:3000` to see the app.
 
-## Project Structure
-- `index.html` - Main HTML structure for the app.
-- `style.css` - CSS for styling the application.
-- `app.js` - JavaScript functionality (or `App.js` if using React).
-- `server.js` - Backend server logic (if applicable).
+## Code Overview
 
-## Future Improvements
-- **User Authentication**: Allow users to sign up and manage their to-do lists.
-- **Due Dates**: Add the ability to set due dates for tasks.
-- **Reminders**: Implement reminders to notify users about upcoming deadlines.
-- **Priority Levels**: Organize tasks by priority.
+The main components of the app are:
 
-## Contributing
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any suggestions or improvements.
+### Components
 
-## License
-This project is licensed under the MIT License.
+- **`AllTasks`**: Manages the main list of tasks and contains filtering logic. Handles task creation, removal, and clearing completed tasks.
+- **`Task`**: Represents a single task. Contains logic for marking a task as completed or removing it.
+- **`NameOfTask`**: A component for adding new tasks.
+- **`Count`**: Displays the total number of tasks.
 
----
+### State Management
 
-Happy organizing with your new To-Do List app!
+- **Tasks State**: An array of tasks, each represented by an object with `id`, `task`, `completed`, and `delete` properties.
+- **Filter State**: Controls the visibility of tasks based on their completion status (`all`, `active`, `completed`).
+- **Local Storage**: Tasks are saved in `localStorage` to persist across sessions.
+
+## How to Use
+
+1. **Adding Tasks**: Enter a task in the input field and submit to add it to the list.
+2. **Marking Tasks**: Click the circle next to a task to mark it as completed. Completed tasks are visually styled with a line-through effect.
+3. **Filtering Tasks**: Use the "All," "Active," and "Completed" buttons to view tasks based on their status.
+4. **Removing Tasks**: Click the cross icon on a task to delete it from the list.
+5. **Clearing Completed Tasks**: Click "Clear Completed" to remove all tasks marked as completed.
+
+## Folder Structure
+
